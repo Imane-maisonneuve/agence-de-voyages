@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SingleForfait from "./SingleForfait";
+import listeForfaits from "../data/listeForfaits.jsx";
 
 const Forfait = () => {
   const { id } = useParams();
@@ -13,7 +14,10 @@ const Forfait = () => {
         const data = await response.json();
         setForfait(data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        const localForfait = listeForfaits.find(
+          (f) => Number(f.id) === Number(id),
+        );
+        setForfait(localForfait);
       }
     };
     fetchForfait();

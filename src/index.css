@@ -1,51 +1,81 @@
 @import "tailwindcss";
 
 .btn {
-  @apply text-white font-bold px-4 py-2 rounded cursor-pointer;
-}
-
-.btn-blue {
-  @apply bg-blue-600 hover:bg-blue-700;
-}
-
-.btn-green {
-  @apply bg-emerald-600 hover:bg-emerald-700;
-}
-
-.btn-red {
-  @apply bg-red-600 hover:bg-red-700;
+  @apply inline-flex items-center justify-center 
+  px-5 py-2.5 
+  rounded-xl 
+  font-medium 
+  text-sm 
+  transition-all duration-200 
+  shadow-sm 
+  focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
 
 .btn-gray {
-  @apply bg-slate-600 hover:bg-slate-700;
+  @apply bg-gradient-to-r from-indigo-500 to-purple-500 
+  text-white 
+  hover:from-indigo-600 hover:to-purple-600 
+  focus:ring-indigo-400;
 }
 
 .btn-block {
-  @apply block w-full;
+  @apply w-full;
 }
+
+/* Form container */
 
 .add-form {
-  @apply mb-8 pt-4 border-t border-slate-200 pb-4;
+  @apply bg-white 
+  p-6 
+  rounded-2xl 
+  shadow-lg 
+  border border-gray-100 
+  space-y-5;
 }
+
+/* Form controls */
 
 .form-control label {
-  @apply block mb-2 text-sm font-medium text-slate-700;
+  @apply block 
+  mb-1 
+  text-xs 
+  font-semibold 
+  uppercase 
+  tracking-wide 
+  text-gray-500;
 }
 
-.form-control input {
-  @apply bg-white border border-slate-300 text-slate-900 text-sm rounded-lg 
-  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+.form-control input,
+.form-control select {
+  @apply w-full 
+  px-4 py-3 
+  rounded-xl 
+  border border-gray-200 
+  bg-gray-50 
+  text-gray-800 
+  placeholder-gray-400
+  transition-all duration-200
+  focus:bg-white
+  focus:border-indigo-400 
+  focus:ring-2 
+  focus:ring-indigo-100 
+  outline-none;
 }
+
+/* Checkbox */
 
 .form-control-check {
-  @apply flex items-center justify-between my-5;
+  @apply flex items-center gap-3 mt-4;
 }
 
 .form-control-check input {
-  @apply w-4 h-4 text-blue-600 bg-slate-100 border-slate-300 rounded 
-  focus:ring-blue-500 focus:ring-2;
+  @apply w-5 h-5 
+  rounded-md 
+  border-gray-300 
+  text-indigo-600 
+  focus:ring-indigo-400;
 }
 
 .form-control-check label {
-  @apply ms-2 text-sm font-medium text-slate-700;
+  @apply text-sm text-gray-600 font-medium;
 }

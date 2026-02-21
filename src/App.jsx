@@ -9,15 +9,30 @@ import UpdateForfait from "./components/UpdateForfait";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import listeForfaits from "./data/listeForfaits.jsx";
+
 function App() {
+  const [serverAvailable, setServerAvailable] = useState(true);
   const [forfaits, setForfaits] = useState([]);
+
   useEffect(() => {
     const getForfaits = async () => {
-      const forfaitFromServer = await fetchForfaits(
-        "http://localhost:5000/forfaits",
-      );
-      setForfaits(forfaitFromServer);
+      try {
+        const forfaitFromServer = await fetchForfaits(
+          "http://localhost:5000/forfaits",
+        );
+
+        setForfaits(forfaitFromServer);
+        setServerAvailable(true);
+        console.log("Scénario 2 : Serveur simulé");
+      } catch (error) {
+        console.log("Scénario 1 : Client-side");
+
+        setForfaits(listeForfaits);
+        setServerAvailable(false);
+      }
     };
+
     getForfaits();
   }, []);
 
@@ -28,22 +43,30 @@ function App() {
   };
 
   const addForfait = async (forfait) => {
-    const res = await fetch("http://localhost:5000/forfaits", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(forfait),
-    });
-    const newForfait = await res.json();
-    setForfaits([...forfaits, newForfait]);
+    if (serverAvailable) {
+      const res = await fetch("http://localhost:5000/forfaits", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(forfait),
+      });
+      const newForfait = await res.json();
+      setForfaits([...forfaits, newForfait]);
+    } else {
+      const lastId = forfaits.length > 0 ? forfaits[forfaits.length - 1].id : 0;
+      const id = lastId + 1;
+      const newForfait = { id, ...forfait };
+      setForfaits([...forfaits, newForfait]);
+    }
   };
 
   const deleteForfait = async (id) => {
-    await fetch(`http://localhost:5000/forfaits/${id}`, {
-      method: "Delete",
-    });
-
+    if (serverAvailable) {
+      await fetch(`http://localhost:5000/forfaits/${id}`, {
+        method: "Delete",
+      });
+    }
     setForfaits(forfaits.filter((forfait) => forfait.id !== id));
   };
 
