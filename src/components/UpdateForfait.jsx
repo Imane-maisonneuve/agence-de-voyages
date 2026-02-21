@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const UpdateForfait = ({ onUpdate }) => {
   const { id } = useParams();
@@ -16,10 +16,11 @@ const UpdateForfait = ({ onUpdate }) => {
     };
     fetchForfait();
   }, [id]);
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     onUpdate(id, prix);
+    navigate("/forfaits");
   };
 
   return (

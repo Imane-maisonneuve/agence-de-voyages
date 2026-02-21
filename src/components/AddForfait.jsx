@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const AddForfait = ({ onAdd }) => {
   const [nom, setnom] = useState("");
   const [description, setdescription] = useState("");
   const [prix, setprix] = useState("");
   const [categorie, setcategorie] = useState("");
+  const navigate = useNavigate();
+
   const onSubmit = (e) => {
     e.preventDefault();
     if (!nom) {
@@ -27,6 +31,8 @@ const AddForfait = ({ onAdd }) => {
     setdescription("");
     setprix("");
     setcategorie("");
+
+    navigate("/forfaits");
   };
   return (
     <form className="add-form" onSubmit={onSubmit}>
