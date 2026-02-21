@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+.btn {
+  @apply text-white font-bold px-4 py-2 rounded cursor-pointer;
+}
+
+.btn-blue {
+  @apply bg-blue-600 hover:bg-blue-700;
+}
+
+.btn-green {
+  @apply bg-emerald-600 hover:bg-emerald-700;
+}
+
+.btn-red {
+  @apply bg-red-600 hover:bg-red-700;
+}
+
+.btn-gray {
+  @apply bg-slate-600 hover:bg-slate-700;
+}
+
+.btn-block {
+  @apply block w-full;
+}
+
+.add-form {
+  @apply mb-8 pt-4 border-t border-slate-200 pb-4;
+}
+
+.form-control label {
+  @apply block mb-2 text-sm font-medium text-slate-700;
+}
+
+.form-control input {
+  @apply bg-white border border-slate-300 text-slate-900 text-sm rounded-lg 
+  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+}
+
+.form-control-check {
+  @apply flex items-center justify-between my-5;
+}
+
+.form-control-check input {
+  @apply w-4 h-4 text-blue-600 bg-slate-100 border-slate-300 rounded 
+  focus:ring-blue-500 focus:ring-2;
+}
+
+.form-control-check label {
+  @apply ms-2 text-sm font-medium text-slate-700;
+}

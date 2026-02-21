@@ -1,0 +1,52 @@
+{
+  "forfaits": [
+    {
+      "id": "1",
+      "nom": "Séjour à Florence",
+      "description": "Découverte de la cathédrale Santa Maria del Fiore, des musées de la Renaissance et des ruelles historiques",
+      "prix": 1203,
+      "imageUrl": "/assets/Florence.jpg",
+      "categorie": "Culture"
+    },
+    {
+      "id": "2",
+      "nom": "Santorini Express",
+      "description": "Maisons blanches, couchers de soleil spectaculaires et plages volcaniques en Grèce",
+      "prix": 1800,
+      "imageUrl": "/assets/Santorini.jpg",
+      "categorie": "Plage"
+    },
+    {
+      "id": "3",
+      "nom": "Voyage à Menton",
+      "description": "Ville méditerranéenne colorée, jardins exotiques et bord de mer ensoleillé",
+      "prix": 2500,
+      "imageUrl": "/assets/Menton.jpg",
+      "categorie": "Aventure"
+    },
+    {
+      "id": "4",
+      "nom": "Trip à Amsterdam",
+      "description": "Canaux pittoresques, musées célèbres et balades à vélo dans la capitale néerlandaise",
+      "prix": 1500,
+      "imageUrl": "/assets/Amsterdam.jpg",
+      "categorie": "Culture"
+    },
+    {
+      "id": "5",
+      "nom": "Séjour à Dubai",
+      "description": "Gratte-ciels impressionnants, désert, shopping de luxe et plages modernes",
+      "prix": 2200,
+      "imageUrl": "/assets/Dubai.jpg",
+      "categorie": "Plage"
+    },
+    {
+      "id": "6",
+      "nom": "Voyage à Moscou",
+      "description": "Place Rouge, Kremlin, architecture historique et culture russe fascinante",
+      "prix": 2000,
+      "imageUrl": "/assets/Moscow.jpg",
+      "categorie": "Culture"
+    }
+  ]
+}
