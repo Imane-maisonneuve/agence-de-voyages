@@ -4,7 +4,7 @@
       "id": "1",
       "nom": "Séjour à Florence",
       "description": "Découverte de la cathédrale Santa Maria del Fiore, des musées de la Renaissance et des ruelles historiques",
-      "prix": 1202,
+      "prix": 1200,
       "imageUrl": "/assets/Florence.jpg",
       "categorie": "Culture"
     },
@@ -12,7 +12,7 @@
       "id": "2",
       "nom": "Santorini Express",
       "description": "Maisons blanches, couchers de soleil spectaculaires et plages volcaniques en Grèce",
-      "prix": 1800,
+      "prix": 1801,
       "imageUrl": "/assets/Santorini.jpg",
       "categorie": "Plage"
     },
@@ -20,7 +20,7 @@
       "id": "3",
       "nom": "Voyage à Menton",
       "description": "Ville méditerranéenne colorée, jardins exotiques et bord de mer ensoleillé",
-      "prix": 2502,
+      "prix": 2500,
       "imageUrl": "/assets/Menton.jpg",
       "categorie": "Aventure"
     },
